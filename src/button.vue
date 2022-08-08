@@ -1,7 +1,7 @@
 <template>
   <button class="m-button" :class="{[`icon-${iconPosition}`]: true, [`${type}`]:true}" @click="$emit('click') ">
-    <j-icon v-if="iconName && !loading" :icon-name="iconName"></j-icon>
-    <j-icon v-if="loading" class="loading" icon-name="loading"></j-icon>
+    <m-icon v-if="iconName && !loading" :icon-name="iconName"></m-icon>
+    <m-icon v-if="loading" class="loading" icon-name="loading"></m-icon>
     <span class="content">
       <slot></slot>
     </span>
@@ -15,7 +15,7 @@ export default {
   // props: ['iconName', 'iconPosition']
   name: 'MinjiButton',
   components: {
-    'j-icon': Icon
+    'm-icon': Icon
   },
   props: {
     iconName: {},
@@ -152,7 +152,7 @@ $danger-05: #feeaea;
     outline: none;
   }
 
-  > .j-icon {
+  > .m-icon {
     order: 1;
     margin-right: 0.3em;
     margin-left: 0;
@@ -163,7 +163,7 @@ $danger-05: #feeaea;
   }
 
   &.icon-right {
-    > .j-icon {
+    > .m-icon {
       order: 2;
       margin-right: 0;
       margin-left: 0.3em;

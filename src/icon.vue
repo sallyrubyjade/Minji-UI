@@ -1,5 +1,5 @@
 <template>
-  <svg class="j-icon">
+  <svg class="m-icon">
     <use :href="`#i-${iconName}`"></use>
   </svg>
 </template>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.j-icon {
+.m-icon {
   width: 1em;
   height: 1em;
 }
