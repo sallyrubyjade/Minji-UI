@@ -11,7 +11,7 @@ export default {
     for (let node of this.$el.children) {
       let name = node.nodeName.toLowerCase();
       if (name !== 'button') {
-        console.warn(`g-button-group 的子元素应该全是 g-button，现在含有 ${name}`)
+        console.warn(`m-button-group 的子元素应该全是 m-button，现在含有 ${name}`)
       }
     }
   }
@@ -30,7 +30,7 @@ $border-color-hover: #666;
 .m-button-group{
   display: inline-flex;
   vertical-align: middle;
-  > .g-button {
+  > .m-button {
     border-radius: 0;
     &:not(:first-child){
       margin-left: -1px;
