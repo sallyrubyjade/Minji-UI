@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minji UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        .box {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div style="margin-top: 110px">
+        <m-player></m-player>
+        <m-player color="purple"></m-player>
+        <m-player color="blue"></m-player>
+        <m-player color="green"></m-player>
+    </div>
+
+    <hr>
+    <div class="box">
+        <p style="line-height: 28px">金钱既是<m-highlight type="info">天使</m-highlight>，又是魔鬼。 金钱正好够用，使你<m-highlight type="success">心满意足时</m-highlight>， 金钱是天使；
+            <m-highlight type="unique">kkkk</m-highlight>金钱让你感到是一堆麻烦时，便成了<m-highlight type="error">魔鬼</m-highlight>。 金钱是流动着的财富。有的人挣了钱对朋友不吝啬，有的人钱多了对自己<m-highlight type="warning">不慷慨</m-highlight>，
+            这里面都有天使的点化</p>
+    </div>
+    <hr>
+    <div class="box">
+        <m-popover>
+            <template v-slot:content>
+                <div>popover内容</div>
+            </template>
+            <m-button>点我</m-button>
+        </m-popover>
+        <m-popover position="bottom">
+            <template v-slot:content>
+                <div>popover内容</div>
+            </template>
+            <m-button>点我</m-button>
+        </m-popover>
+        <m-popover position="right">
+            <template v-slot:content>
+                <div>asdasdsadasd</div>
+            </template>
+            <m-button>点我</m-button>
+        </m-popover>
+        <m-popover position="left">
+            <template v-slot:content>
+                <div>asdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasd
+                </div>
+            </template>
+            <m-button>点我</m-button>
+        </m-popover>
+    </div>
+    <div class="box">
+        <m-popover trigger="hover">
+            <template v-slot:content>
+                <div>popover内容</div>
+            </template>
+            <m-button>点我</m-button>
+        </m-popover>
+        <m-popover position="bottom" trigger="hover">
+            <template v-slot:content>
+                <div>popover内容</div>
+            </template>
+            <m-button>点我</m-button>
+        </m-popover>
+        <m-popover position="right" trigger="hover">
+            <template v-slot:content>
+                <div>asdasdsadasd</div>
+            </template>
+            <m-button>点我</m-button>
+        </m-popover>
+        <m-popover position="left" trigger="hover">
+            <template v-slot:content>
+                <div>asdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasdasdasdsadasd
+                </div>
+            </template>
+            <m-button>点我</m-button>
+        </m-popover>
+    </div>
+    <hr>
+
+    <m-tab :selected="selectedTab" v-on:update:selected="selectedTab = $event">
+        <m-tab-head>
+            <m-tab-label name="jennie">
+                <m-icon icon-name="like"></m-icon>
+                金珍妮
+            </m-tab-label>
+            <m-tab-label name="suzi">裴秀智</m-tab-label>
+            <m-tab-label name="mina">名井南</m-tab-label>
+        </m-tab-head>
+        <m-tab-body>
+            <m-tab-pane name="jennie">1996年1月16日出生于韩国首尔特别市江南区清潭洞</m-tab-pane>
+            <m-tab-pane name="suzi">1994年10月10日生于韩国全罗南道光州广域市</m-tab-pane>
+            <m-tab-pane name="mina">1997年3月24日出生于美国得克萨斯州圣安东尼奥</m-tab-pane>
+        </m-tab-body>
+    </m-tab>
+
+    <hr>
+    <m-button @click="useDefaultToast">toast 无自定义props</m-button>
+    <m-button @click="useToastSetting">toast 有props</m-button>
+    <m-button @click="useToastSetting2">toast 有props</m-button>
+    <m-layout height="400">
+        <m-sider width="300">sider</m-sider>
+        <m-layout>
+            <m-header height="100">header</m-header>
+            <m-content>content</m-content>
+            <m-footer height="50">footer</m-footer>
+        </m-layout>
+    </m-layout>
+    <hr>
+
+    <!--    <g-layout height="400">-->
+    <!--        <g-header height="100">header</g-header>-->
+    <!--        <g-layout>-->
+    <!--            <g-sider width="200">sidebar</g-sider>-->
+    <!--            <g-content>content</g-content>-->
+    <!--        </g-layout>-->
+    <!--        <g-footer height="50">footer</g-footer>-->
+    <!--    </g-layout>-->
+    <!--    <hr>-->
+
+    <div class="box">
+        <m-input v-model="message"></m-input>
+        <p>{{ message }}</p>
+        <button @click="message+=1">+1</button>
+    </div>
+    <div class="box">
+        <m-input value="张三"></m-input>
+        <m-input value="王二麻子" disabled></m-input>
+        <m-input value="李四" readonly></m-input>
+    </div>
+    <div class="box">
+        <m-input value="监听change" @change="inputChange"></m-input>
+    </div>
+    <div class="box">
+        <m-input value="监听input" @input="inputListening"></m-input>
+    </div>
+    <div class="box">
+        <m-input value="可可可可可" error="姓名不能少于两个字"></m-input>
+    </div>
+    <div class="box">
+        <m-button type="primary">
+            我爱JS
+        </m-button>
+        <m-button icon-name="thumbs-up" type="secondary">
+            我爱JS
+        </m-button>
+        <m-button icon-name="like">
+            我爱JS
+        </m-button>
+        <m-button icon-name="download" icon-position="right" type="warning">
+            按钮
+        </m-button>
+        <m-button :loading="true" type="danger">
+            加载中
+        </m-button>
+        <m-button icon-name="download" icon-position="right" :loading="true">
+            按钮
+        </m-button>
+
+        <m-button-group>
+            <m-button icon-name="left" icon-position="left">上一页</m-button>
+            <m-button>中间</m-button>
+            <m-button icon-name="right" icon-position="right">下一页</m-button>
+        </m-button-group>
+        <m-icon icon-name="star"></m-icon>
+        <m-icon icon-name="info"></m-icon>
+        <m-icon icon-name="eye-open"></m-icon>
+        <m-icon icon-name="moon"></m-icon>
+        <div id="test"></div>
+        <div id="test1"></div>
+    </div>
+</div>
+<script src="./src/app.js"></script>
+</body>
+</html>
