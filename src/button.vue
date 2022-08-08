@@ -1,5 +1,5 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]: true, [`${type}`]:true}" @click="$emit('click') ">
+  <button class="m-button" :class="{[`icon-${iconPosition}`]: true, [`${type}`]:true}" @click="$emit('click') ">
     <j-icon v-if="iconName && !loading" :icon-name="iconName"></j-icon>
     <j-icon v-if="loading" class="loading" icon-name="loading"></j-icon>
     <span class="content">
@@ -86,7 +86,7 @@ $danger-05: #feeaea;
   animation: spin 2s infinite linear;
 }
 
-.g-button {
+.m-button {
   font-size: $font-size;
   height: $button-height;
   padding: 0 1em; /* 不用把宽度写死 */
