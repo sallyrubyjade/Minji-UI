@@ -22,7 +22,7 @@ export default {
     },
     autoCloseDelay: {
       type: Number,
-      default: 3
+      default: 2
     },
     closeBtn: {
       type: Object,
@@ -129,6 +129,7 @@ $success-70-color: rgba(140, 193, 82, 0.95);
 .wrapper {
   position: fixed;
   left: 50%;
+  z-index: 999;
   transform: translateX(-50%);
   &.position-top {
     top: 10px;
