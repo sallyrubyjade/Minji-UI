@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-head">
+  <div class="tab-head" ref="tabHead">
     <slot></slot>
     <div class="line" ref="line" ></div>
   </div>
@@ -10,10 +10,11 @@ export default {
   name: "MinjiTabHead",
   inject: ['eventBus'],
   mounted() {
+    let tabHeadStyle = this.$refs.tabHead.getBoundingClientRect()
     this.eventBus.$on('update:selected', (name, vm) => {
       let {width, left} = vm.$el.getBoundingClientRect();
       this.$refs.line.style.width = `${width}px`;
-      this.$refs.line.style.left = `${left}px`;
+      this.$refs.line.style.left = `${left - tabHeadStyle.left}px`
     })
   }
 }
