@@ -9,7 +9,7 @@ module.exports = {
         search: false,
         nav: [
             {text: 'Home', link: '/'},
-            {text: 'Github', link: 'https://google.com'},
+            {text: 'Github', link: 'https://github.com/sallyrubyjade/Minji-UI'},
         ],
         sidebar: [
             {
