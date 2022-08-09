@@ -2,15 +2,18 @@
 
 > This is my first try to build my own component library. Hope you can try and like it! And if I have time, I will keep improving it 👩🏻‍💻
 
+🚀 [项目主页](https://sallyrubyjade.github.io/Minji-UI/)
+
+![主页预览](https://github.com/sallyrubyjade/pics/blob/main/minji-ui-vue2.png?raw=true)
 ## What I built 有哪些轮子
-- Record Player Component (for fun!) 唱片机
-- Button Component 按钮
-- Input Component 输入框
-- Layout Component 布局
-- Toast Component 消息提示
-- Tab Component 标签栏
-- Popover Component 弹出提示条
-- Highlight Component 高亮
+- Record Player Component (for fun!)  唱片机
+- Button Component  按钮
+- Input Component  输入框
+- Layout Component  布局
+- Toast Component  消息提示
+- Tab Component  标签栏
+- Popover Component  弹出提示条
+- Highlight Component  高亮
 
 ## Before you use 使用前
 Please add this in your CSS 使用本框架前，请在CSS中开启`border-box`
